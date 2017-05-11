@@ -1,7 +1,6 @@
 clear;clc
 
 s=[cd];
-% path1=addpath([s(1:30) '\彰濱浮標記憶卡資料\']);
 datapath=[s '\xlsxFile\'];
 
 for YY=12%:1:13

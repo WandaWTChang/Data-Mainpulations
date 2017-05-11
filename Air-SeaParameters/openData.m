@@ -1,7 +1,7 @@
 clear;clc
 
 s=cd;
-datapath=[s(1:30) '\彰濱浮標記憶卡資料\'];
+datapath=['E:\ResearchwithDrTsai\Buoydata\彰濱浮標記憶卡資料\'];
 newfolder=[s '\xlsxFile\'];mkdir(newfolder);
 
 for YY=12:1:13;
