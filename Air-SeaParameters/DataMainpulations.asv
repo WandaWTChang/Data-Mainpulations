@@ -4,17 +4,17 @@ s=[cd];
 datapath=[s '\xlsxFile\'];
 newfolder=[s '\Air-SeaParameter\'];mkdir(newfolder);
 
-for YY=12:1:13
-    for MM=1:1:12
+for YY=12%:1:13
+    for MM=8%1:1:12
         if MM<10
             file=[datapath num2str(YY) '0' num2str(MM) '.xlsx'];
-            savename=[newfolder num2str(YY) '0' num2str(MM) '.mat'];
+            savename=[newfolder num2str(YY) '0' num2str(MM) '.dat'];
         elseif MM>=10
             file=[datapath num2str(YY) num2str(MM) '.xlsx'];
-            savename=[newfolder num2str(YY) num2str(MM) '.mat'];
+            savename=[newfolder num2str(YY) num2str(MM) '.dat'];
         end
         
-        if exist(file) 
+        if exist(file)
             [data,txt,raw]=xlsread(file);
             Tp=data(:,5); %   Wave Period, (seconds)
             hs=data(:,6);
@@ -26,15 +26,13 @@ for YY=12:1:13
             Hsensor=[3.2;2.9];
             zh=10; % (m), the height of 10m
             
-            % algorithm of air-sea parameters --------------------------------------------------
+            % algorithm of air-sea parameters
             [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp, zr ]...
                 =airseaparameter(Tp, hs, ur, us, Tair, Tsea, Dwater, Hsensor, zh);
             
-            % save file --------------------------------------------------
+            % save file
             parameter.ustar=ustar;
             parameter.uz=uz;
-            parameter.ur=ur;
-            parameter.us=us;
             parameter.zh=zh;
             parameter.zr=zr;
             parameter.z0=z0;
@@ -48,13 +46,9 @@ for YY=12:1:13
             parameter.Cp=Cp;
             parameter.kr=kr;
             parameter.sigma=sigma;
-            parameter.hs=hs;
-            parameter.Dwater=Dwater;
-            parameter.Tair=Tair;
-            parameter.Tsea=Tsea;
             
-            save(savename, 'parameter')
-
+            
+            
         end
     end
 end

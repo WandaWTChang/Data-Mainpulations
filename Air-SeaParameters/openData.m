@@ -1,7 +1,7 @@
 clear;clc
 
 s=cd;
-datapath=['E:\ResearchwithDrTsai\Buoydata\彰濱浮標記憶卡資料\'];
+% datapath=['E:\ResearchwithDrTsai\Buoydata\彰濱浮標記憶卡資料\'];
 newfolder=[s '\xlsxFile\'];mkdir(newfolder);
 
 for YY=12:1:13;
@@ -47,11 +47,6 @@ for YY=12:1:13;
                 str=num2str(time(i));
                 time2(i,1)={[str(1:4) '/' str(5:6) '/' str(7:8) ' ' str(9:10) ':00']};
                 clear str
-%                 % assessment of U10
-%                 zr=sum(3.2+2.9)/2; % The anemometers were installed at the height of 3.2 m and 2.9 m, respectively.
-%                 a0=.1; % the power exponent αo=0.1
-%                 u10(i,1)=(u_mean(i,1))*((10/zr)^a0);
-%                 u10s(i,1)=abs(u_mean(i,1)-us(i,1))*((10/zr)^a0);
             end
             clear i zr a0 
             

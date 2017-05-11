@@ -1,7 +1,7 @@
 % algorithm for air-sea parameters
 % write by Wanda, 2017/5/11
 
-function [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp ]...
+function [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp, zr ]...
     =airseaparameter(Tp, hs, ur, us, Tair, Tsea, Dwater, Hsensor, zh)
 %____________________________________________________________
 % Input 
@@ -28,6 +28,7 @@ function [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp ]...
 % sigma : angular frequency, 1/Tp
 % z0 : the roughness length (Taylor and Yelland (2001))
 % Cp : the phase velocity, m/s
+% zr : the measurement height, m
 %____________________________________________________________
 
             Ldata=size(ur,1);
