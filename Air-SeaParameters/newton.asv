@@ -1,0 +1,29 @@
+% Newton Raphson Method
+% http://personal.maths.surrey.ac.uk/st/S.Gourley/NewtonRaphson.pdf
+
+function [Lr, kr, sigma]=newton(h,T);
+%------------------------------------------------------------------
+% input
+% h : water depth (m)
+% T : wave periods (s)
+% output
+% Lr : wavelength with Newton-Rhapson (m)
+% kr : wave number with Newton-Rhapson (1/m)
+% sigma : angular frequency (1/T)
+
+x0 =0.0001;   
+
+if sign(h) == -1 % 符號值，若h>0為+1；h=0為0；h<0為-1
+       h = -h;
+end
+
+x1=x0-fs(x0)/df(x0);
+n=1;
+
+while( abs(x1-x0)>=1.0e-6 ) & ( n<=100000000 )
+    x0=x1;
+    x1=x0-fs(x0)/df(x0); n=n+1;
+end
+x1
+n
+

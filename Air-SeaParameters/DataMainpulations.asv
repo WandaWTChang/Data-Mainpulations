@@ -24,8 +24,8 @@ for YY=12%:1:13
             zh=10; % (m), the height of 10m
             
             % algorithm of air-sea parameters
-            [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp ]...
-                =airseaparameter(Tp, hs, ur, us, Tair, Tsea, Dwater, Hsensor, zh);
+            [ustar, uz, Rib, Psta, Fws, Fstab, alpha, Lp, kr, sigma, z0, Cp ]=airseaparameter(Tp, hs, ur, us, Tair, Tsea, Dwater, Hsensor, zh);
+            
             
         end
     end

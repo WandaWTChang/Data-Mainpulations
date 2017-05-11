@@ -36,7 +36,7 @@ function [Lr,kr,sigma]=disper(h,T)
 %h = 10; 
 x0 =0.0001;   
 
-if sign(h) == -1 % 符號值，若x>0為+1；x=0為0；x<0為-1
+if sign(h) == -1 % 符號值，若h>0為+1；h=0為0；h<0為-1
        h = -h;
 end
 
