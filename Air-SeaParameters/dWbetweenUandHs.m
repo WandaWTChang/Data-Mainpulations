@@ -53,21 +53,14 @@ for YY=12%:1:13
              clear i u h
              
             % wind and wave spectrum
-<<<<<<< HEAD
             spectrum=parameter.uz(:,end).*cos(dw);
-=======
->>>>>>> cfa3502c1bf151cd5e5643a1542ade2b5480531d
             group(:,1)=parameter.uz(:,end).*cos(dw)./parameter.Cp;
             case1(:,1)=(find(group<.8));
             case2(:,1)=(find(group>.8 & group<1.2));
             case3(:,1)=(find(group>1.2 & group<1.6));
             
             % case 1 : U10*cos(dw)/Cp<0.8
-<<<<<<< HEAD
             
-=======
-            A=parameter.uz(case1,end).*cos(dw(case1));
->>>>>>> cfa3502c1bf151cd5e5643a1542ade2b5480531d
             % case 2 : 0.8<U10*cos(dw)/Cp<1.2
             
             % case 3 : 1.2<U10*cos(dw)/Cp<1.6
